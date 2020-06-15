@@ -1,4 +1,4 @@
-{{-- layouts/admin.blade.phpを読み込む --}}
+{{-- layouts/admin.blade.phpファイルを読み込む --}}
 @extends('layouts.admin')
 
 
