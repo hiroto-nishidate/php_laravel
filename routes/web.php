@@ -23,10 +23,13 @@ Route::get('/', function () {
 //admin/profile/create にアクセスしたら ProfileController の add Action に、admin/profile/edit にアクセスしたら
 //ProfileController の edit Action に割り当てるように設定してください。
 
-Route::group(['prefix' => 'admin'], function(){
-    Route::get('news/create','Admin\NewsController@add')->middleware('auth');
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
+    Route::get('news/create','Admin\NewsController@add');
+    Route::post('news/create','Admin\NewsController@create'); # PHP-Laravel 13　追記
     Route::get('profile/create','Admin\ProfileController@add')->middleware('auth');
+    Route::post('profile/create', 'Admin\ProfileController@create');# PHP-Laravel 13　課題3
     Route::get('profile/edit','Admin\ProfileController@edit')->middleware('auth');
+    Route::post('profile/edit', 'Admin\ProfileController@update')->middleware('auth'); # PHP-Laravel 13　課題6
 });
 
 Auth::routes();
