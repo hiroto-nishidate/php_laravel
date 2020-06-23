@@ -30,6 +30,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
     Route::post('profile/create', 'Admin\ProfileController@create');# PHP-Laravel 13　課題3
     Route::get('profile/edit','Admin\ProfileController@edit')->middleware('auth');
     Route::post('profile/edit', 'Admin\ProfileController@update')->middleware('auth'); # PHP-Laravel 13　課題6
+    Route::get('news', 'Admin\NewsController@index')->middleware('auth'); // PHP-Laravel 15
+    Route::get('news/edit', 'Admin\NewsController@edit')->middleware('auth'); // PHP-Laravel 16
+    Route::post('news/edit', 'Admin\NewsController@update')->middleware('auth'); // PHP-Laravel 16
+    Route::get('news/delete', 'Admin\NewsController@delete')->middleware('auth'); // PHP-Laravel 16
 });
 
 Auth::routes();
