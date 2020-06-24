@@ -5,7 +5,6 @@
     <div class="container">
         <div class="row">
             <h2>Myプロフィール</h2>
-            <p>herokutest</p>
         </div>
         <div class="row">
             <div class="admin-profile col-md-12 mx-auto">
@@ -23,13 +22,15 @@
                             @foreach($posts as $profile)
                                 <tr>
                                     <td>{{ str_limit($profile->name, 50) }}</td>
-                                    <td>{{ str_limit($profile->gender, 5) }}</td>
+                                    <td>{{ str_limit($profile->gender, 100) }}</td>
                                     <td>{{ str_limit($profile->hobby, 100) }}</td>
                                     <td>{{ str_limit($profile->introduction, 250) }}</td>
                                     <td>
                                         <div>
                                             <a href="{{ action('Admin\ProfileController@edit', ['id' => $profile->id]) }}">編集</a>
                                         </div>
+                                         <div>
+                                            <a href="{{ action('Admin\ProfileController@delete', ['id' => $profile->id]) }}">削除</a>
                                     </td>
                                 </tr>
                             @endforeach

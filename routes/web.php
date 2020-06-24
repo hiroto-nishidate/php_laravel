@@ -24,8 +24,8 @@ Route::get('/', function () {
 //ProfileController の edit Action に割り当てるように設定してください。
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
-    Route::get('news/create','Admin\NewsController@add');
-    Route::post('news/create','Admin\NewsController@create'); # PHP-Laravel 13　追記
+    Route::get('news/create','Admin\NewsController@add')->middleware('auth');
+    Route::post('news/create','Admin\NewsController@create')->middleware('auth');
     Route::get('profile/create','Admin\ProfileController@add')->middleware('auth');
     Route::post('profile/create', 'Admin\ProfileController@create');# PHP-Laravel 13　課題3
     Route::get('profile/edit','Admin\ProfileController@edit')->middleware('auth');
@@ -34,6 +34,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
     Route::get('news/edit', 'Admin\NewsController@edit')->middleware('auth'); // PHP-Laravel 16
     Route::post('news/edit', 'Admin\NewsController@update')->middleware('auth'); // PHP-Laravel 16
     Route::get('news/delete', 'Admin\NewsController@delete')->middleware('auth'); // PHP-Laravel 16
+    Route::get('profile', 'Admin\ProfileController@index')->middleware('auth'); 
+    Route::get('profile/delete','Admin\ProfileController@delete')->middleware('auth');
 });
 
 Auth::routes();

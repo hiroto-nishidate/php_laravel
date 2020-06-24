@@ -57,10 +57,22 @@ class ProfileController extends Controller
         $this->validate($request, Profile::$rules);
         $profile = Profile::find($request->id);
         $profile_form = $request->all();
-        // dd($profile);
+        
+        // フォームから送信されてきた_tokenを削除する
         unset($profile_form['_token']);
         $profile->fill($profile_form)->save();
        
         return redirect('admin/profile');
     }
+    
+  // 以下を追記 PHP-Laravel 16 データの削除    
+  public function delete(Request $request)
+    {
+        $profile = Profile::find($request->id);
+        
+        $profile->delete();
+        return redirect('admin/profile/');
+        
+    }
+    
 }
