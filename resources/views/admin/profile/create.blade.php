@@ -28,11 +28,11 @@
                     <div class="form-group row">
                         <label class="col-md-2">性別</label>
                         <div class="col-md-10">
-                            <input type="radio" id="男" name="gender" value='男' {{ old('gender') == '男' ? '男' :''}}>
+                            <input type="radio" id="man" name="gender" value='男' {{ old('gender') == '男' ? '男' :''}}>
                             <label for="man">男</label>
-                            <input type="radio" id="女" name="gender" value='女' {{ old('gender') == '女' ? '女' :''}}>
+                            <input type="radio" id="woman" name="gender" value='女' {{ old('gender') == '女' ? '女' :''}}>
                             <label for="woman">女</label>
-                            <input type="radio" id="その他" name="other" value='その他' {{ old('gender') == 'その他' ? 'その他' :''}}>
+                            <input type="radio" id="other" name="gender" value='その他' {{ old('gender') == 'その他' ? 'その他' :''}}>
                             <label for="other">その他</label>
                         </div>
                     </div>
