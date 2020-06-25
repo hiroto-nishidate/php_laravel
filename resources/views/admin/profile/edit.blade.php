@@ -24,11 +24,11 @@
                     <div class="form-group row">
                         <label class="col-md-2">性別</label>
                         <div class="col-md-10">
-                            <input type="radio" id="man" name="gender" value='男' {{ $profile_form->gender == '男' ? '男' :''}}>
+                            <input type="radio" id="man" name="gender" value="男" {{ $profile_form->gender == "男" ? "checked":""}}>
                             <label for="man">男</label>
-                            <input type="radio" id="womna" name="gender" value='女' {{ $profile_form->gender == '女' ? '女' :''}}>
+                            <input type="radio" id="womna" name="gender" value="女" {{ $profile_form->gender == "女" ? "checked" :""}}>
                             <label for="woman">女</label>
-                            <input type="radio" id="other" name="gender" value='その他' {{ $profile_form->gender == 'その他' ? 'その他' :''}}>
+                            <input type="radio" id="other" name="gender" value='その他' {{ $profile_form->gender == "その他" ? "checked" :""}}>
                             <label for="other">その他</label>
                         </div>
                     </div>
