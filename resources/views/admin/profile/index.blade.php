@@ -5,6 +5,7 @@
     <div class="container">
         <div class="row">
             <h2>Myプロフィール</h2>
+            <p>デプロイ2回目</p> //課題　デプロイ
         </div>
         <div class="row">
             <div class="admin-profile col-md-12 mx-auto">
